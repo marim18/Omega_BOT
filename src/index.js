@@ -1,6 +1,7 @@
 
 require('dotenv').config();
 const {Client, IntentsBitField} = require('discord.js');
+const { Database } = require('sqlite3');
 
 const client = new Client({
     intents: [
@@ -16,7 +17,32 @@ client.on('ready', (c) => {
     console.log(`✅ ${c.user.tag} is online`);
 });
 
+const sqlite3 = require('sqlite3').verbose();
+ db = new sqlite3.Database('db/omegadb.db');
 
+function filterfunc(limbemoji)
+{
+
+    const query = 'SELECT * FROM AilmentS WHERE category_id = ?';
+
+  db.all(query, [limbemoji], (err, rows) => {
+    if (err) {
+      console.error("Error executing query:", err.message);
+      return;
+    }
+    const searchresults = rows.map(row => row.Title);
+      
+    console.log("Search results:", searchresults);});
+
+}
+/*
+function openarticle(String ailmenttitle)
+{
+//const query =  SELECT * Ailment FROM Ailments WHERE Title = ailmentitle;
+console.log(query)}
+*/ 
+
+db.close();
 client.on('messageCreate', async (msg) => {
     if(msg.author.bot) {
         return;
