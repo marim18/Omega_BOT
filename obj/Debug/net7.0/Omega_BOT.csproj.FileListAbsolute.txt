@@ -1,0 +1,14 @@
+C:\Users\Jon Georg Magnussen\Desktop\universitet\Year 3 esports\Esports practice 56\Project omega\Omega_BOT\bin\Debug\net7.0\Omega_BOT.exe
+C:\Users\Jon Georg Magnussen\Desktop\universitet\Year 3 esports\Esports practice 56\Project omega\Omega_BOT\bin\Debug\net7.0\Omega_BOT.deps.json
+C:\Users\Jon Georg Magnussen\Desktop\universitet\Year 3 esports\Esports practice 56\Project omega\Omega_BOT\bin\Debug\net7.0\Omega_BOT.runtimeconfig.json
+C:\Users\Jon Georg Magnussen\Desktop\universitet\Year 3 esports\Esports practice 56\Project omega\Omega_BOT\bin\Debug\net7.0\Omega_BOT.dll
+C:\Users\Jon Georg Magnussen\Desktop\universitet\Year 3 esports\Esports practice 56\Project omega\Omega_BOT\bin\Debug\net7.0\Omega_BOT.pdb
+C:\Users\Jon Georg Magnussen\Desktop\universitet\Year 3 esports\Esports practice 56\Project omega\Omega_BOT\obj\Debug\net7.0\Omega_BOT.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jon Georg Magnussen\Desktop\universitet\Year 3 esports\Esports practice 56\Project omega\Omega_BOT\obj\Debug\net7.0\Omega_BOT.AssemblyInfoInputs.cache
+C:\Users\Jon Georg Magnussen\Desktop\universitet\Year 3 esports\Esports practice 56\Project omega\Omega_BOT\obj\Debug\net7.0\Omega_BOT.AssemblyInfo.cs
+C:\Users\Jon Georg Magnussen\Desktop\universitet\Year 3 esports\Esports practice 56\Project omega\Omega_BOT\obj\Debug\net7.0\Omega_BOT.csproj.CoreCompileInputs.cache
+C:\Users\Jon Georg Magnussen\Desktop\universitet\Year 3 esports\Esports practice 56\Project omega\Omega_BOT\obj\Debug\net7.0\Omega_BOT.dll
+C:\Users\Jon Georg Magnussen\Desktop\universitet\Year 3 esports\Esports practice 56\Project omega\Omega_BOT\obj\Debug\net7.0\refint\Omega_BOT.dll
+C:\Users\Jon Georg Magnussen\Desktop\universitet\Year 3 esports\Esports practice 56\Project omega\Omega_BOT\obj\Debug\net7.0\Omega_BOT.pdb
+C:\Users\Jon Georg Magnussen\Desktop\universitet\Year 3 esports\Esports practice 56\Project omega\Omega_BOT\obj\Debug\net7.0\Omega_BOT.genruntimeconfig.cache
+C:\Users\Jon Georg Magnussen\Desktop\universitet\Year 3 esports\Esports practice 56\Project omega\Omega_BOT\obj\Debug\net7.0\ref\Omega_BOT.dll

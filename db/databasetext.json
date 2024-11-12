@@ -1,0 +1,135 @@
+[
+    {
+        "title": "Sciatica",
+        "symptoms": ["pain", "numbness", "tingling", "weakness"],
+        "description": "Pain in the sciatic nerve from back down the leg caused by compressed or irritated nerves, often due to herniated discs or spinal stenosis.",
+        "treatment": ["anti-inflammatory drugs", "pain killers", "Physical Therapy"],
+        "source": "https://www.ncbi.nlm.nih.gov/books/NBK507908/"
+    },
+    {
+        "title": "Lower Crossed Syndrome",
+        "symptoms": ["muscle weakness", "muscle tightness", "pain", "joint dysfunction"],
+        "description": "Characterized by overactivation of abdominal muscles and underactivation of gluteus maximus, leading to hip flexion and backward pelvic tilt. It has two subtypes: A (anterior pelvic crossed syndrome) and B (posterior pelvic crossed syndrome).",
+        "treatment": ["Iliopsoas stretch", "Erector spinae stretch", "regular breaks while gaming"],
+        "source": "https://www.physio-pedia.com/Lower_Crossed_Syndrome"
+    },
+    {
+        "title": "Deep Vein Thrombosis",
+        "symptoms": ["inconsistent sensitivity", "calf pain", "swelling", "redness", "dilated veins", "warmness", "tenderness", "pain", "limb edema"],
+        "description": "A blood clot that commonly occurs in the legs, potentially fatal. Often caused by a sedentary lifestyle, injury, or high blood pressure.",
+        "treatment": ["see your doctor", "compression stockings"],
+        "source": "https://www.ncbi.nlm.nih.gov/books/NBK507708/"
+    },
+    {
+        "title": "Lumbar Spinal Stenosis",
+        "symptoms": ["pain", "numbness", "tingling", "weakness", "heavy feeling in legs", "cramping"],
+        "description": "Narrowing of the spinal canal causing nerve compression, leading to pain and discomfort.",
+        "treatment": ["hot packs", "cold packs", "balance and strength exercises"],
+        "source": "https://my.clevelandclinic.org/health/diseases/17499-spinal-stenosis"
+    },
+    {
+        "title": "Cervical Spinal Stenosis",
+        "symptoms": ["pain", "numbness", "tingling", "weakness", "neck pain", "balance problems"],
+        "description": "Narrowing of the cervical spinal canal causing nerve compression, leading to pain and discomfort.",
+        "treatment": ["hot packs", "cold packs", "balance and strength exercises"],
+        "source": "https://my.clevelandclinic.org/health/diseases/17499-spinal-stenosis"
+    },
+    {
+        "title": "Hyperlordosis",
+        "symptoms": ["pain in the back", "curved spine"],
+        "description": "Excessive curvature of the spine leading to discomfort and poor posture, also known as hollowback or swayback.",
+        "treatment": ["exercise", "core musculature stretches", "improving chair ergonomics"],
+        "source": "https://www.webmd.com/back-pain/best-exercises-hyperlordosis"
+    },
+    {
+        "title": "Eye Strain (Computer Vision Syndrome)",
+        "symptoms": ["blurred vision", "dry eyes", "headaches", "difficulty focusing", "eye discomfort"],
+        "description": "Strain on eye muscles caused by prolonged screen time without breaks.",
+        "treatment": ["limit screen time", "adjust lighting and device settings", "follow the 20/20/20 rule", "proper screen positioning"],
+        "source": "N/A"
+    },
+    {
+        "title": "Tension Headaches",
+        "symptoms": ["dull, aching pain around forehead or back of head", "possible neck pain"],
+        "description": "Muscle tension in the neck and shoulders from poor posture, eye strain, or stress.",
+        "treatment": ["improve posture", "take regular breaks", "stress management techniques"],
+        "source": "N/A"
+    },
+    {
+        "title": "Cervical Strain (Neck Pain)",
+        "symptoms": ["pain and stiffness in the neck", "radiating pain to upper back and shoulders"],
+        "description": "Strain on the cervical spine from improper posture.",
+        "treatment": ["maintain proper sitting ergonomics", "neck stretching", "strengthening exercises"],
+        "source": "N/A"
+    },
+    {
+        "title": "Temporomandibular Joint Disorder (TMJ)",
+        "symptoms": ["jaw pain", "clicking sounds when moving jaw", "difficulty chewing"],
+        "description": "Jaw clenching or grinding, often linked to stress or intense focus.",
+        "treatment": ["relaxation techniques", "jaw stretches", "mouth guards if clenching occurs at night"],
+        "source": "N/A"
+    },
+    {
+        "title": "Upper Crossed Syndrome",
+        "symptoms": ["rounded shoulders", "forward head position", "neck and shoulder pain", "tightness in chest"],
+        "description": "Tightening of chest and neck muscles with weakening of upper back muscles due to prolonged slouching.",
+        "treatment": ["strengthening exercises for back and shoulders", "stretching of chest muscles", "proper desk ergonomics"],
+        "source": "N/A"
+    },
+    {
+        "title": "Shoulder Impingement Syndrome",
+        "symptoms": ["pain when lifting arm", "weakness in shoulder", "catching sensation"],
+        "description": "Irritation of shoulder tendons from overuse, particularly when raising arms frequently.",
+        "treatment": ["strengthening the rotator cuff", "posture adjustments", "regular breaks to relax shoulder muscles"],
+        "source": "N/A"
+    },
+    {
+        "title": "Tension Myalgia (Muscle Strain)",
+        "symptoms": ["aching muscles in neck, upper back, and shoulders", "tender trigger points"],
+        "description": "Chronic stress or poor posture leading to muscle overuse.",
+        "treatment": ["relaxation exercises", "massage therapy", "ergonomic workspaces"],
+        "source": "N/A"
+    },
+    {
+        "title": "Tech Neck",
+        "symptoms": ["neck pain", "stiffness", "headaches"],
+        "description": "Unnatural forward head position from looking down at screens, putting pressure on the cervical spine.",
+        "treatment": ["raising screens to eye level", "ergonomic furniture", "neck stretches"],
+        "source": "N/A"
+    },
+    {
+        "title": "Shoulder Overuse Tendinopathy",
+        "symptoms": ["arm pain", "shoulder pain"],
+        "description": "Pain in the outer part of the upper arm, worsens when raising hands or reaching.",
+        "treatment": ["rest", "ice", "heat", "stretching exercises"],
+        "source": "N/A"
+    },
+    {
+        "title": "Elbow Overuse Tendinopathy",
+        "symptoms": ["forearm pain", "elbow pain"],
+        "description": "Develops from repetitive use of forearm extensors, more common in individuals aged 30-60 and gamers.",
+        "treatment": ["rest", "ice or heat application", "NSAIDs", "physiotherapy"],
+        "source": "N/A"
+    },
+    {
+        "title": "Cubital Tunnel Syndrome",
+        "symptoms": ["numbness", "shooting pain along forearm"],
+        "description": "Neuropathy of the ulnar nerve due to inflammation from repetitive movements.",
+        "treatment": ["correct postures", "ergonomics"],
+        "source": "N/A"
+    },
+    {
+        "title": "Carpal Tunnel Syndrome",
+        "symptoms": ["sharp pain in wrist", "lower mobility around wrist"],
+        "description": "Inflammation in the wrist caused by poor workstation ergonomics.",
+        "treatment": ["ergonomics", "consult a doctor if suspected"],
+        "source": "N/A"
+    },
+    {
+        "title": "Gamer Thumb",
+        "symptoms": ["pain at base of thumb", "difficulty grasping or pinching", "pain when flexing wrist"],
+        "description": "Inflammation and irritation of tendons around the thumb due to repetitive stress.",
+        "treatment": ["exercise", "stretching", "strengthening muscles"],
+        "source": "N/A"
+    }
+]
