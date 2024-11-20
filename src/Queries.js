@@ -1,21 +1,20 @@
+const { botreaction } = require("./Messageclass");
 
-async function queryfunction(query, Actionfunction, param){
-    let output =[];
+function queryfunction(query, Actionfunction, param){
+    let output = [];
     return new Promise((resolve, reject) => {
     db.all(query,[param],(err,rows) =>{
         if (err) {
             console.error("Error executing query:", err.message);
             reject(err);
-            return;
         }
         else {
             console.log("entered")
-           output = Actionfunction(rows);
-          
-
+            output = Actionfunction(rows);
+            resolve(output);
         }
     });
-    resolve(output);
+    
     });
 }
 
@@ -82,36 +81,41 @@ function openarticle(rows)
     msg.channel.send(articleresult)
 
 }
-async function EmojiFilter2(rows){
-    const emojilist = await rows.map(row => row.emoji)
+function EmojiFilter2(rows){
+    const emojilist = rows.map(row => row.emoji)
     console.log("debug2" + emojilist);
     return emojilist;
 }
 
- function EmojiFilter3(param){
+function EmojiFilter3(param){
     const query = 'SELECT emoji FROM categories WHERE categoryEmoji = ?';
-    return  queryfunction(query, EmojiFilter2, param);
+   return queryfunction(query, EmojiFilter2, param);
 }
 
-function EmojiFilter(param){
-    let emojilist = [];
+
+function Emojidb2(db,param){
+    db.find({ emoji, categoryEmoji: param}, function(err , docs){
+        return docs;
+    });
+    
+}
+
+async function EmojiFilter(param){
     const query = 'SELECT emoji FROM categories WHERE categoryEmoji = ?';
+    var promise1 = new Promise ((resolve,reject)=>{
     db.all(query, [param], (err, rows) =>
         {
             if (err)
             {
             console.error("Error executing query:", err.message);
-            return;
+            reject("lol");
              }
              else{
-             emojilist = rows.map(row => row.emoji)
-             console.log(emojilist);
+             resolve(rows.map(row => row.emoji))
+
              }
-         
         });
-   
-    console.log("debug" + emojilist);
-    return emojilist;
+    });
 }
 
 function DetailedSearchMessage(rows){
@@ -123,14 +127,14 @@ function DetailedSearchMessage(rows){
 }
 
 
-
 module.exports = {
     queryfunction,
     EmojitoId,
     EmojiFilter,
     EmojiFilter3,
     dbfunc,
-    DetailedSearchMessage
+    DetailedSearchMessage,
+    Emojidb2
 };
 
 class q{

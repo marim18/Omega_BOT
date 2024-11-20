@@ -3,9 +3,12 @@ require('dotenv').config();
 const dialogue= require ('../src/Dialogue.js');
 const queries =require ('./Queries.js');
 const m =require ('./Messageclass.js');
+var Datastore = require('nedb')
+  , db2 = new Datastore({filename : 'db/omegadb.db'});
 
 const {Client, IntentsBitField} = require('discord.js');
 const { Database, OPEN_READONLY } = require('sqlite3');
+
 
 const client = new Client({
     intents: [
@@ -33,8 +36,18 @@ client.on('messageCreate', async (msg) => {
      if(ManualEmoji.includes(reactedemoji)){
         //const testEmoji = queries.EmojiFilter(queries.dbfunc('SELECT emoji FROM categories WHERE categoryEmoji = ?',reactedemoji,db));
        // const testEmoji =  queries.queryfunction( 'SELECT emoji FROM categories WHERE categoryEmoji = ?',queries.EmojiFilter,reactedemoji);
-       const testEmoji = await queries.EmojiFilter3(reactedemoji); 
-       const reactedemoji2 =  m.botanswer(msg,"test2",testEmoji);
+       
+       queries.EmojiFilter3(reactedemoji)
+       .then((testEmoji) => {
+        console.log(testEmoji);
+           const reactedemoji2 = m.botanswer(msg, "test2", testEmoji);
+       })
+       .catch((error) => {
+           console.error("Error handling testEmoji:", error);
+       });
+       //testEmoji = queries.Emojidb2(db2,reactedemoji);
+      
+       
      }
      else{
         msg.channel.send("error");
