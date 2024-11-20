@@ -100,40 +100,14 @@ function Emojidb2(db,param){
     
 }
 
-async function EmojiFilter(param){
-    const query = 'SELECT emoji FROM categories WHERE categoryEmoji = ?';
-    var promise1 = new Promise ((resolve,reject)=>{
-    db.all(query, [param], (err, rows) =>
-        {
-            if (err)
-            {
-            console.error("Error executing query:", err.message);
-            reject("lol");
-             }
-             else{
-             resolve(rows.map(row => row.emoji))
 
-             }
-        });
-    });
-}
-
-function DetailedSearchMessage(rows){
-    const mesage = [];
-    rows.forEach(row => {
-        mesage.concat(`Select the right emoji ${row.emoji} = ${row.categorytitle}\n`);
-    })
-    return mesage;
-}
 
 
 module.exports = {
     queryfunction,
     EmojitoId,
-    EmojiFilter,
     EmojiFilter3,
     dbfunc,
-    DetailedSearchMessage,
     Emojidb2
 };
 

@@ -6,7 +6,7 @@ const m =require ('./Messageclass.js');
 var Datastore = require('nedb')
   , db2 = new Datastore({filename : 'db/omegadb.db'});
 
-const {Client, IntentsBitField} = require('discord.js');
+const {Client, IntentsBitField, Message} = require('discord.js');
 const { Database, OPEN_READONLY } = require('sqlite3');
 
 
@@ -26,32 +26,34 @@ client.on('ready', (c) => {
 const sqlite3 = require('sqlite3').verbose();
 db = new sqlite3.Database('db/omegadb.db');
 const ManualEmoji = ['👕', '🦵', '💆‍♂️', '🦾'];
-//let testEmoji = ['🪑'];
+var testEmoji = [];
 
 client.on('messageCreate', async (msg) => {
     if(msg.author.bot) {
         return;
-    }if (msg.content === 'OmegaHelp') {
+    }
+    if (msg.content === 'OmegaHelp') {
      const reactedemoji =  await m.botanswer(msg,"test",ManualEmoji);
+     var reactedemoji2;
      if(ManualEmoji.includes(reactedemoji)){
-        //const testEmoji = queries.EmojiFilter(queries.dbfunc('SELECT emoji FROM categories WHERE categoryEmoji = ?',reactedemoji,db));
-       // const testEmoji =  queries.queryfunction( 'SELECT emoji FROM categories WHERE categoryEmoji = ?',queries.EmojiFilter,reactedemoji);
-       
+
        queries.EmojiFilter3(reactedemoji)
        .then((testEmoji) => {
         console.log(testEmoji);
-           const reactedemoji2 = m.botanswer(msg, "test2", testEmoji);
-       })
-       .catch((error) => {
-           console.error("Error handling testEmoji:", error);
+
+        return m.botanswer(msg, "test2", testEmoji)
+        .then((reactedemoji2) => {
+            console.log("Second Reacted Emoji:", reactedemoji2);
+
+            if( testEmoji.includes(reactedemoji2))
+            {
+                msg.channel.send("stuff can be done + "+reactedemoji2);
+            }
+
        });
-       //testEmoji = queries.Emojidb2(db2,reactedemoji);
-      
-       
-     }
-     else{
-        msg.channel.send("error");
-     }
+          
+       });
+    }
     
     }
         
