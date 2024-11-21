@@ -1,6 +1,6 @@
 const { botreaction } = require("./Messageclass");
 
-function queryfunction(query, Actionfunction, param){
+function queryfunction(query, Actionfunction,param){
     let output = [];
     return new Promise((resolve, reject) => {
     db.all(query,[param],(err,rows) =>{
@@ -17,7 +17,7 @@ function queryfunction(query, Actionfunction, param){
     
     });
 }
-
+/*
 function dbfunc(query,param){
     return new Promise((resolve, reject) => {
     db.all(query,[param],(err,rows) =>{
@@ -31,33 +31,33 @@ function dbfunc(query,param){
         }});
     
 });
-}
+}*/
 
 function EmojitoId(limbemoji)
  {
     const EmojiId = 'SELECT category_id FROM categories WHERE emoji = ? or categoryEmoji = ?';
-    db.all(EmojiId, [limbemoji,limbemoji], (err, rows) => 
+   return new Promise((resolve,reject)=> {db.all(EmojiId, [limbemoji,limbemoji], (err, rows) => 
     {
          
         if (err) {
-          console.error("Error executing query:", err.message);
+          reject(console.error("Error executing query:", err.message));
           return;
         }
         else{
         const cat_id = rows.map(row => row.category_id);
         console.log (cat_id);
-        return cat_id;}
+        resolve(cat_id);}
         
-    }); 
+    }); });
 }
 
 
-function filterfunc(cat_id)
+async function filterfunc(cat_id)
 {   const query = 'SELECT * FROM Ailments WHERE category_id = ?';
-    const searchresults = [];
-  cat_id.forEach( id =>
+    var searchresults = [];
+  await cat_id.forEach( id =>
   {
-
+    
      db.all(query, [id], (err, rows) =>
         {
             if (err)
@@ -69,18 +69,22 @@ function filterfunc(cat_id)
          
         });
     })
-    msg.channel.send("Search results:", searchresults);
+   return searchresults;
 }
 
-
+function articleopener(param){
+    const query = 'SELECT Ailment FROM Ailments WHERE Title = ?';
+    return queryfunction(query, openarticle, param)
+}
    
 function openarticle(rows)
 {
-    const articleresult = rows.map(row => row.Title + row.article);
-         
-    msg.channel.send(articleresult)
+    
+    const articleresult = rows.map(row => row.Title + row.article);  
+    return msg.channel.send(articleresult)
 
 }
+
 function EmojiFilter2(rows){
     const emojilist = rows.map(row => row.emoji)
     console.log("debug2" + emojilist);
@@ -93,22 +97,15 @@ function EmojiFilter3(param){
 }
 
 
-function Emojidb2(db,param){
-    db.find({ emoji, categoryEmoji: param}, function(err , docs){
-        return docs;
-    });
-    
-}
-
-
-
-
 module.exports = {
-    queryfunction,
-    EmojitoId,
-    EmojiFilter3,
-    dbfunc,
-    Emojidb2
+    queryfunction, // db automation function
+    EmojitoId, 
+    EmojiFilter3, //gets a list of emoji 
+    //dbfunc,
+   // Emojidb2,
+    filterfunc, // based on given category id gives a list of titles
+    openarticle, // opens the article
+    articleopener, //sends stuff into open article
 };
 
 class q{
@@ -117,5 +114,4 @@ class q{
     emojiId = 'SELECT category_id FROM categories WHERE emoji = ? or categoryEmoji = ?';
     Ailmentbyid = 'SELECT * FROM Ailments WHERE category_id = ?'
     
-    //queryfunction(openquery,openarticle,"title")
 }
