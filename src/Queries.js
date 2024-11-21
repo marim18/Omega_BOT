@@ -53,35 +53,41 @@ function EmojitoId(limbemoji)
 
 
 async function filterfunc(cat_id)
-{   const query = 'SELECT * FROM Ailments WHERE category_id = ?';
-    var searchresults = [];
-  await cat_id.forEach( id =>
-  {
+{   console.log('is inside fucntion'+cat_id);
+    const query = 'SELECT * FROM Ailments WHERE category_id = ?';
+   var searchresults = [];
+   /* cat_id.forEach( async id =>
+    {
+        const result = await  queryfunction(query,filtersender,id);
+        console.log('hello' +result);
+
+    })*/
+for (const id of cat_id ){
+    const result = await  queryfunction(query,filtersender,id);
+    searchresults.push(result);
+    console.log('hello' +result);
+}
+
+
     
-     db.all(query, [id], (err, rows) =>
-        {
-            if (err)
-            {
-            console.error("Error executing query:", err.message);
-            return;
-             }
-            searchresults = rows.map(row => row.Title + row.id);
-         
-        });
-    })
+    console.log(searchresults);
    return searchresults;
 }
 
+function filtersender(rows){
+    return searchresults = rows.map(row => row.title);
+}
+
 function articleopener(param){
-    const query = 'SELECT Ailment FROM Ailments WHERE Title = ?';
-    return queryfunction(query, openarticle, param)
+    const query = 'SELECT * FROM Ailments WHERE title = ? LIMIT 1';
+    return queryfunction(query, openarticle, param);
 }
    
 function openarticle(rows)
 {
     
-    const articleresult = rows.map(row => row.Title + row.article);  
-    return msg.channel.send(articleresult)
+    const articleresult = rows.map(row => row.title + '\n'+ row.body);  
+    return articleresult;
 
 }
 
@@ -109,7 +115,7 @@ module.exports = {
 };
 
 class q{
-    openquery = 'SELECT Ailment FROM Ailments WHERE Title = ?';
+    openquery = 'SELECT * FROM Ailments WHERE title = ?';
     speficyemoji = 'SELECT emoji FROM categories WHERE categoryEmoji = ?';
     emojiId = 'SELECT category_id FROM categories WHERE emoji = ? or categoryEmoji = ?';
     Ailmentbyid = 'SELECT * FROM Ailments WHERE category_id = ?'

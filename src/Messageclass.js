@@ -24,25 +24,7 @@ async function botanswer(msg,dialogue1,ManualEmoji){
     ); 
 });
 }
-async function botreply(msg,dialogue1,filter){   /// urgent need of help 
-        
-    const helpMessage = await msg.reply(dialogue1);
 
-    return new Promise((resolve, reject) => {
-        const collector = helpMessage.createReactionCollector({ time: 60000 });
-        collector.on('collect',async (reply) => 
-        {
-        console.log(`Collected reaction: ${reply}`);
-        resolve(reply);}
-         );
-   
-    collector.on('end', collected => 
-        {
-            reject( msg.channel.send('Reaction time has ended.'));
-        }
-         ); 
-   });
-}
 function botreaction(emojilist,helpMessage){
     console.log("emojilist " + emojilist);
     for (let i = 0; i < emojilist.length; i++) {
@@ -54,7 +36,7 @@ function botreaction(emojilist,helpMessage){
 module.exports = {
     botanswer,
     botreaction,
-    botreply
+   // botreply
  }
 
 
