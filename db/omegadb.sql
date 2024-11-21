@@ -26,7 +26,7 @@ VALUES("hips"),("legs"),("lowerback"),("hands"),("fingers"),("wrists"),("shoulde
 */
 
 
-
+/*
 INSERT INTO Ailments (name, title, body, symptoms, Sources, category_id) VALUES
 ('Sciatica', 'Sciatica', 'Pain in the sciatic nerve from back down the leg caused by compressed or irritated nerves, often due to herniated discs or spinal stenosis.', 'pain, numbness, tingling, weakness', 'https://www.ncbi.nlm.nih.gov/books/NBK507908/', 2),
 ('Lower_Crossed_Syndrome', 'Lower Crossed Syndrome', 'Characterized by overactivation of abdominal muscles and underactivation of gluteus maximus, leading to hip flexion and backward pelvic tilt. It has two subtypes: A (anterior pelvic crossed syndrome) and B (posterior pelvic crossed syndrome).', 'muscle weakness, muscle tightness, pain, joint dysfunction', 'https://www.physio-pedia.com/Lower_Crossed_Syndrome', 1),
@@ -47,3 +47,27 @@ INSERT INTO Ailments (name, title, body, symptoms, Sources, category_id) VALUES
 ('Cubital_Tunnel_Syndrome', 'Cubital Tunnel Syndrome', 'Neuropathy of the ulnar nerve due to inflammation from repetitive movements.', 'numbness, shooting pain along forearm', 'N/A', 8),
 ('Carpal_Tunnel_Syndrome', 'Carpal Tunnel Syndrome', 'Inflammation in the wrist caused by poor workstation ergonomics.', 'sharp pain in wrist, lower mobility around wrist', 'N/A', 6),
 ('Gamer_Thumb', 'Gamer Thumb', 'Inflammation and irritation of tendons around the thumb due to repetitive stress.', 'pain at base of thumb, difficulty grasping or pinching, pain when flexing wrist', 'N/A', 5);
+*/
+/*
+ALTER TABLE categories ADD COLUMN emoji TEXT;
+
+UPDATE categories SET emoji = '🩳' WHERE category_id = 1;
+UPDATE categories SET emoji = '🦿' WHERE category_id = 2;
+UPDATE categories SET emoji = '🪑' WHERE category_id = 3;
+UPDATE categories SET emoji = '👐' WHERE category_id = 4;
+UPDATE categories SET emoji = '☝️' WHERE category_id = 5;
+UPDATE categories SET emoji = '✍️' WHERE category_id = 6;
+UPDATE categories SET emoji = '🤷‍♂️' WHERE category_id = 7;
+UPDATE categories SET emoji = '🤳' WHERE category_id = 8;
+UPDATE categories SET emoji = '🧣' WHERE category_id = 9;
+UPDATE categories SET emoji = '🧑‍🦱' WHERE category_id = 10;
+UPDATE categories SET emoji = '👀' WHERE category_id = 11;
+
+ALTER TABLE categories ADD COLUMN categoryEmoji text; 
+UPDATE categories set categoryEmoji = '👕' WHERE category_id = 3 or category_id =  7;
+UPDATE categories set categoryEmoji = '🦵' WHERE category_id = 1 or category_id =  2;
+UPDATE categories set categoryEmoji = '💆‍♂️' WHERE category_id = 9 or category_id =  10 or category_id = 11; 
+UPDATE categories set categoryEmoji = '🦾' WHERE category_id = 4 or category_id =  5 or category_id = 6 or category_id =  9 or category_id = 7; 
+
+UPDATE categories set categoryEmoji = '👕' WHERE category_id =  7;
+UPDATE categories set categoryEmoji = '💆‍♂️' WHERE category_id = 9;*/
