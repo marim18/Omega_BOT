@@ -34,15 +34,18 @@ client.on('messageCreate', async (msg) => {
         return;
     }
     if (msg.content === 'OmegaHelp') {
-        const reactedemoji = await m.botanswer(msg, "test", ManualEmoji); //where it says test here i want dialogue variable
+        
+        const reactedemoji = await m.botanswer(msg, dialogue.dialogue1,
+        ManualEmoji); //where it says test here i want dialogue variable
         var reactedemoji2; //idk why this is gray
+        
         if (ManualEmoji.includes(reactedemoji)) { //checks if reply from user is in array
 
             queries.EmojiFilter3(reactedemoji) //lager array 2 som er under arrayet 
                 .then((testEmoji) => {
                     console.log(testEmoji);
 
-                    return m.botanswer(msg, "test2", testEmoji)  //where it says test here i want dialogue variable
+                    return m.botanswer(msg, "You have picked" + (reactedemoji) + "  " + (dialogue.EmojiDictionary[reactedemoji]), testEmoji)  //where it says test here i want dialogue variable
                         .then((reactedemoji2) => {
                             console.log("Second Reacted Emoji:", reactedemoji2);
 
@@ -57,7 +60,7 @@ client.on('messageCreate', async (msg) => {
                                         lm = l;
                                         console.log("entered filterfun " + Listmessage + l);
 
-                                        return msg.channel.send('Here is a list of possibilities:' + Listmessage)//send filtered out list. 
+                                        return msg.channel.send('Here is a list of possibilities:' + Listmessage + ', Replay on prevous message to get more infomastion')//send filtered out list. 
 
 
 
@@ -72,6 +75,8 @@ client.on('messageCreate', async (msg) => {
         }
 
     }
+    
+    
     if (msg.type === MessageType.Reply) {
         const original = await msg.fetchReference();
        
@@ -87,7 +92,7 @@ client.on('messageCreate', async (msg) => {
                 await msg.channel.send(await queries.articleopener(target)+'');
             }//prints article
             else{
-                console.log("wtf"+ msg.content);
+                console.log("unkown"+ msg.content);
             }
 
         }
