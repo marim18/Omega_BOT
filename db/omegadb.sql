@@ -292,3 +292,4 @@ WHERE ID = 9;*/
 
 /*UPDATE Ailments set Sources = "https://www.webmd.com/back-pain/best-exercises-hyperlordosis"
 WHERE ID = 10;*/
+

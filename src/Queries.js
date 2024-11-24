@@ -17,21 +17,7 @@ function queryfunction(query, Actionfunction,param){
     
     });
 }
-/*
-function dbfunc(query,param){
-    return new Promise((resolve, reject) => {
-    db.all(query,[param],(err,rows) =>{
-        if (err) {
-           reject( console.error("Error executing query:", err.message));
-            return;
-        }
-        else {
-                console.log("dbfunc")
-               resolve(rows);
-        }});
-    
-});
-}*/
+
 
 function EmojitoId(limbemoji)
  {
@@ -56,12 +42,7 @@ async function filterfunc(cat_id)
 {   console.log('is inside fucntion'+cat_id);
     const query = 'SELECT * FROM Ailments WHERE category_id = ?';
    var searchresults = [];
-   /* cat_id.forEach( async id =>
-    {
-        const result = await  queryfunction(query,filtersender,id);
-        console.log('hello' +result);
 
-    })*/
 for (const id of cat_id ){
     const result = await  queryfunction(query,filtersender,id);
     searchresults.push(result);
@@ -86,7 +67,7 @@ function articleopener(param){
 function openarticle(rows)
 {
     
-    const articleresult = rows.map(row => row.title + '\n'+ row.body);  
+    const articleresult = rows.map(row => row.title + '\n'+ row.article);  
     return articleresult;
 
 }
@@ -104,14 +85,12 @@ function EmojiFilter3(param){
 
 
 module.exports = {
-    queryfunction, // db automation function
+    queryfunction,
     EmojitoId, 
-    EmojiFilter3, //gets a list of emoji 
-    //dbfunc,
-   // Emojidb2,
-    filterfunc, // based on given category id gives a list of titles
-    openarticle, // opens the article
-    articleopener, //sends stuff into open article
+    EmojiFilter3, 
+    filterfunc, 
+    openarticle, 
+    articleopener, 
 };
 
 class q{

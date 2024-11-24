@@ -1,23 +1,16 @@
-class appdialogue {
-//btw u open database qith >sqlite3 open db right above this sentence there is a search bar.
 
-}
 
 function DetailedSearchMessage(rows){ 
    
     const message = [];
     rows.forEach(row => {
-        // Use the dictionary to find the emoji description
+       
         const emojiDescription = EmojiDictionary[row.emoji] || "(description not found)";
         message.push(`Select the right emoji: ${row.emoji} = ${row.categorytitle} (${emojiDescription})\n`);
     });
-    return message.join(""); // Join all lines into a single formatted string
+    return message.join(""); 
    
-    /* const mesage = [];
-    rows.forEach(row => {
-        mesage.concat(`Select the right emoji ${row.emoji} = ${row.categorytitle}\n`);
-    })
-    return mesage;*/
+  
 }
 
 
